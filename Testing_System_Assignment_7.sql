@@ -1,3 +1,10 @@
+--  Trigger là một thủ tục SQL được thực thi ở phía server khi có
+-- một sự kiện như Insert, Delete, hay Update. Trigger là một loại stored procedure đặc biệt
+-- (không có tham số) được thực thi (execute) một cách tự động khi có một sự kiện thay đổi
+-- dữ liệu (data modification).
+
+
+
 -- Question 1: Tạo trigger không cho phép người dùng nhập vào Group có ngày tạo trước 1 năm trước
 DROP TRIGGER IF EXISTS before_insert_group;
 DELIMITER $$

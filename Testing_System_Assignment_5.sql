@@ -1,3 +1,8 @@
+-- Trong SQL Server, View là đoạn lệnh truy vấn đã được viết sẵn và lưu bên trong cơ sở dữ liệu. Một View thì bao gồm 1 câu lệnh SELECT và 
+-- khi bạn chạy View thì bạn sẽ thấy kết quả giống như khi bạn mở 1 Table
+-- . ... Bởi vì nó có thể tổng hợp dữ liệu từ nhiều Table để tạo thành 1 Table ảo.
+
+
 -- Question 1: Tạo view có chứa danh sách nhân viên thuộc phòng ban sale
 CREATE OR REPLACE VIEW VW_Sale AS
 SELECT a.*, d.DepartmentName 

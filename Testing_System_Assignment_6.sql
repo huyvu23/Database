@@ -1,3 +1,8 @@
+-- Procedure (Thủ tục) là một chương trình trong cơ sở dữ liệu gồm nhiều câu lệnh mà bạn lưu lại cho những lần sử dụng sau. 
+-- Trong SQL Server, bạn có thể truyền các tham số vào procedure, 
+-- tuy nó không trả về một giá trị cụ thể như function (hàm) nhưng cho biết việc thực thi thành công hay thất bại.
+
+
 -- Question 1: Tạo store để người dùng nhập vào tên phòng ban và in ra tất cả các account thuộc phòng ban đó
 DROP PROCEDURE IF EXISTS get_account_from_department;
 DELIMITER $$
