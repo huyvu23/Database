@@ -66,19 +66,19 @@ CREATE TABLE Ve (
    /*,FOREIGN KEY (MaKhach) REFERENCES Khach (MaKhach)*/
 );
 
-insert into DiaDanh ( `TenDiaDanh`)
-value ('Hà Nội'),
-('Hồ Chí Minh'),
-('Hội An'),
-('Đà Nẵng'),
-('Đà Lạt'),
-('Sapa');
+INSERT INTO DiaDanh ( `TenDiaDanh`)
+VALUES				('Hà Nội'),
+					('Hồ Chí Minh'),
+					('Hội An'),
+					('Đà Nẵng'),
+					('Đà Lạt'),
+					('Sapa');
 
 
 
-insert into Tour ( `TenTour` , `DiaDanhID`, `Gia`, `NgayBd`, `NgayKt`, `SoNgay`, `SoCho`,  `NoiDung`)
-value ('tour Hà Nội' , 1, 1000000,'2022/02/22', '2022/02/25', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Hà Lội'),
-('tour Đà Lạt' , 5, 2000000,'2022/02/12', '2022/02/15', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Đà Lạt'),
-('tour Sapa' , 6, 3000000,'2022/02/02', '2022/02/05', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Sapa');
+INSERT INTO Tour ( `TenTour` , `DiaDanhID`, `Gia`, `NgayBd`, `NgayKt`, `SoNgay`, `SoCho`,  `NoiDung`)
+VALUES 			('tour Hà Nội' , 1, 1000000,'2022/02/22', '2022/02/25', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Hà Lội'),
+				('tour Đà Lạt' , 5, 2000000,'2022/02/12', '2022/02/15', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Đà Lạt'),
+				('tour Sapa' , 6, 3000000,'2022/02/02', '2022/02/05', 3, 30, 'tour du lịch 3 ngày 2 đêm tại Sapa');
 
 
