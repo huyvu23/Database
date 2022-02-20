@@ -1,8 +1,8 @@
 /*============================== CREATE DATABASE =======================================*/
 /*============================== CREATE DATABASE =======================================*/
-DROP DATABASE IF EXISTS Tourmanagement;
-CREATE DATABASE Tourmanagement;
-USE Tourmanagement;
+DROP DATABASE IF EXISTS TourManagement;
+CREATE DATABASE TourManagement;
+USE TourManagement;
 
 /*============================== CREATE TABLE=== =======================================*/
 /*======================================================================================*/
@@ -42,6 +42,7 @@ CREATE TABLE Tour(
 	LichTrinh			NVARCHAR(50) NOT NULL,
     SoCho				TINYINT UNSIGNED NOT NULL,
     NoiDung				NVARCHAR(5000) NOT NULL,
+    Anh					VARCHAR(500) ,
  	FOREIGN KEY (DiaDanhID) REFERENCES DiaDanh (DiaDanhID)
 );
 
@@ -83,14 +84,14 @@ CREATE TABLE QuanLyAdmin (
 
 INSERT INTO GioiTinh (GioiTinhID , GioiTinh )
 vALUE				(1			, 'Male'	),
-					(2			,'Female');
+					(2			,'Female'	);
 
-INSERT INTO Khach 	( `TenKhach` , `GioiTinh`, `SoDienThoai`, `DiaChi`, `Email`, `Password`)
+INSERT INTO Khach 	( TenKhach ,  GioiTinhID , SoDienThoai, DiaChi, `Email`, `Password`)
 VALUE 				('TenKhach1' , '1', 		1234512351,'sdasdasd', 'Email1', 123456 ),
-					('TenKhach2' , '1', 		1234512351,'sdasdasd', 'Email2', 123456 ),
-					('TenKhach3' , '1', 		1234512351,'sdasdasd', 'Email3', 123456 );
+					('TenKhach2' , '1', 		1234512352,'sdasdasd', 'Email2', 123456 ),
+					('TenKhach3' , '1', 		1234512353,'sdasdasd', 'Email3', 123456 );
 
-INSERT INTO Khachsan 	( `TenKs` , `DiaChiKs`)
+INSERT INTO Khachsan ( `TenKs` , `DiaChiKs`)
 VALUE 				('TenKs1' , 'DiaChiKs1'),
 					('TenKs2' , 'DiaChiKs2'),
 					('TenKs3' , 'DiaChiKs3');
@@ -108,15 +109,15 @@ VALUE 				('UserName1'),
 					('UserName2'),
 					('UserName3');								
 
-INSERT INTO Tour 	( `TenTour` , `DiaDanhID`, `Gia`, 	`NgayBd`, 	`LichTrinh`,  `SoCho`,  `NoiDung`)
-		VALUE 		('tour Hà Nội' , 1, 		1000000,'2022/02/22', '3 ngày 2 đêm',  30, 'tour du lịch 3 ngày 2 đêm tại Hà Lội'),
-					('tour Đà Lạt' , 2, 		2000000,'2022/02/12', '3 ngày 2 đêm',  30, 'tour du lịch 3 ngày 2 đêm tại Đà Lạt'),
-					('tour Sapa' , 	 3, 		3000000,'2022/02/02', '3 ngày 2 đêm',  30, 'tour du lịch 3 ngày 2 đêm tại Sapa');
+INSERT INTO Tour 	( `TenTour` , `DiaDanhID`, `Gia`, 	`NgayBd`, 	`LichTrinh`,  `SoCho`,  `NoiDung`, `Anh`)
+		VALUE 		('tour Hà Nội' , 1, 		1000000,'2022/02/22', '3 ngày 2 dêm',  30, 'tour du lịch 3 ngày 2 đêm tại Hà Lội',"https://dulichviet.com.vn/images/bandidau/NOI-DIA/Ha-Noi/du-lich-cat-ba-dip-le-30-4-gia-tot-du-lich-viet.jpg"),
+					('tour Đà Lạt' , 2, 		2000000,'2022/02/12', '3 ngày 2 dêm',  30, 'tour du lịch 3 ngày 2 đêm tại Đà Lạt',"https://dulichviet.com.vn/images/bandidau/NOI-DIA/Ha-Noi/du-lich-quan-lan-dip-le-30-4-du-lich-viet(1).jpg"),
+					('tour Sapa' , 	 3, 		3000000,'2022/02/02', '3 ngày 2 dêm',  30, 'tour du lịch 3 ngày 2 đêm tại Sapa',"https://dulichviet.com.vn/images/bandidau/NOI-DIA/Ha-Noi/du-lich-quan-lan-dip-le-30-4-tu-ha-noi-du-lich-viet.jpg");
                     
-INSERT INTO DatTour 	( `MaTourID` , `NgayDat`, `SoNguoi`, 	`TrangThai`)
-		VALUE 			(1, 			DEFAULT,	'5', 			DEFAULT),
-						(2, 			DEFAULT,	'5', 			DEFAULT),
-						(3, 			DEFAULT,	'5', 			DEFAULT);
+INSERT INTO DatTour 	( MaTourID , 		NgayDat, 		SoNguoi, 	TrangThai)
+		VALUE 			(1, 					DEFAULT,	'5', 			0),
+						(2, 					DEFAULT,	'5', 			0),
+						(3, 					DEFAULT,	'5', 			0);
 
 INSERT INTO Ve 	( `MaDatTourID` , `MaKhachID`)
 		VALUE 	(1				, 			1),
